@@ -76,20 +76,84 @@ class _RegisterPageState extends State<RegisterPage> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               TextField(
-                decoration: const InputDecoration(labelText: 'Name'),
+                style: const TextStyle(color: Colors.white),
+                decoration: InputDecoration(
+                  labelText: 'Name',
+                  labelStyle : TextStyle(color: Colors.white),
+                  fillColor: Colors.transparent,
+                  filled: true,
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(10.0),
+                  ),
+                  focusedBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(10.0),
+                    borderSide: const BorderSide(color: Colors.pinkAccent, width: 2.0),
+                  ),
+                  enabledBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(10.0),
+                    borderSide: const BorderSide(
+                      width: 2,
+                      color: Colors.white,
+                    ),
+                  ),
+                  ),
                 controller: nameController,
               ),
-              TextField(
-                decoration: const InputDecoration(labelText: 'Email'),
-                controller: emailController,
+              const SizedBox(
+                height: 20,
               ),
               TextField(
+                style: const TextStyle(color: Colors.white),
+                decoration: InputDecoration(labelText: 'Email',
+                labelStyle : TextStyle(color: Colors.white),
+                fillColor: Colors.transparent,
+                  filled: true,
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(10.0),
+                  ),
+                  focusedBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(10.0),
+                    borderSide: const BorderSide(color: Colors.pinkAccent, width: 2.0),
+                  ),
+                  enabledBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(10.0),
+                    borderSide: const BorderSide(
+                      width: 2,
+                      color: Colors.white,
+                    ),
+                  ),
+                ),
+                controller: emailController,
+              ),
+              const SizedBox(
+                height: 20,
+              ),
+              TextField(
+                style: const TextStyle(color: Colors.white),
                 obscureText: true,
-                decoration: const InputDecoration(labelText: 'Password'),
+                decoration: InputDecoration(labelText: 'Password',
+                labelStyle : TextStyle(color: Colors.white),
+                fillColor: Colors.transparent,
+                  filled: true,
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(10.0),
+                  ),
+                  focusedBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(10.0),
+                    borderSide: const BorderSide(color: Colors.pinkAccent, width: 2.0),
+                  ),
+                  enabledBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(10.0),
+                    borderSide: const BorderSide(
+                      width: 2,
+                      color: Colors.white,
+                    ),
+                  ),
+                ),
                 controller: passwordController,
               ),
               const SizedBox(
-                height: 16,
+                height: 40,
               ),
               BlocConsumer<RegisterBloc, RegisterState>(
                 listener: (context, state) {
@@ -109,6 +173,7 @@ class _RegisterPageState extends State<RegisterPage> {
                     }));
                   }
                 },
+
                 builder: (context, state) {
                   if (state is RegisterLoading) {
                     return const Center(
@@ -127,12 +192,23 @@ class _RegisterPageState extends State<RegisterPage> {
                           .read<RegisterBloc>()
                           .add(SaveRegisterEvent(request: requestModel));
                     },
-                    child: const Text('Register'),
+                    style: ElevatedButton.styleFrom(
+                        primary: Colors.pinkAccent,
+                        minimumSize: const Size.fromHeight(50),
+                        shadowColor: Colors.grey.withOpacity(0.4),
+                        elevation: 24, // e
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(10.0),
+                      ),
+                    ),
+                    child: const Text('Register',
+                      style: TextStyle(color: Colors.white),
+                    ),
                   );
                 },
               ),
               const SizedBox(
-                height: 16,
+                height: 36,
               ),
               InkWell(
                 onTap: () {
@@ -142,7 +218,8 @@ class _RegisterPageState extends State<RegisterPage> {
                 },
                 child: const Text(
                   'Belum Punya Akun? Register',
-                  style: TextStyle(decoration: TextDecoration.underline),
+                   style: TextStyle(color : Colors.white),
+                  // style: TextStyle(decoration: TextDecoration.underline),
                 ),
               ),
             ],
