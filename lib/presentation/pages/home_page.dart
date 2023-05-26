@@ -32,7 +32,14 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Home - Profile'),
+        title: const Text('Profile',
+         style: TextStyle(
+          color: Color(0xff1f005c),
+          fontStyle: FontStyle.normal,
+          fontWeight: FontWeight.w900,
+          fontSize: 45,
+          ),
+        ),
         actions: [
           IconButton(
               onPressed: () async {
@@ -60,7 +67,7 @@ class _HomePageState extends State<HomePage> {
                   const SizedBox(
                     width: 8,
                   ),
-                  Text(state.profile.email ?? ''),
+                  Text(state.profile.email ?? '',),
                 ],
               );
             }
@@ -81,7 +88,8 @@ class _HomePageState extends State<HomePage> {
                     child: ListTile(
                       leading: CircleAvatar(child: Text('${product.price}')),
                       title: Text(product.title ?? '-'),
-                      subtitle: Text(product.description ?? '-'),
+                      subtitle: Text(product.description ?? '-'
+                      ),
                     ),
                   );
                 }));
@@ -98,8 +106,10 @@ class _HomePageState extends State<HomePage> {
               builder: (context) {
                 return AlertDialog(
                   title: const Text('Add Product'),
+
                   content: Column(
                     mainAxisSize: MainAxisSize.min,
+
                     children: [
                       TextField(
                         decoration: const InputDecoration(labelText: 'Title'),
@@ -113,7 +123,7 @@ class _HomePageState extends State<HomePage> {
                       TextField(
                         maxLines: 3,
                         decoration:
-                            const InputDecoration(labelText: 'Description'),
+                            const InputDecoration(labelText: 'Description',),
                         controller: descriptionController,
                       ),
                     ],

@@ -23,10 +23,15 @@ class MyApp extends StatefulWidget {
   const MyApp({super.key});
 
   @override
-  State<MyApp> createState() => _MyAppState();
+  _MyAppState createState() => new _MyAppState();
+
+  // @override
+  // State<MyApp> createState() => _MyAppState();
+
 }
 
 class _MyAppState extends State<MyApp> {
+
   @override
   void initState() {
     super.initState();
@@ -59,6 +64,7 @@ class _MyAppState extends State<MyApp> {
           useMaterial3: true,
         ),
         home: const LoginPage(),
+        debugShowCheckedModeBanner: false,
       ),
     );
   }
