@@ -106,10 +106,8 @@ class _HomePageState extends State<HomePage> {
               builder: (context) {
                 return AlertDialog(
                   title: const Text('Add Product'),
-
                   content: Column(
                     mainAxisSize: MainAxisSize.min,
-
                     children: [
                       TextField(
                         decoration: const InputDecoration(labelText: 'Title'),
@@ -142,12 +140,12 @@ class _HomePageState extends State<HomePage> {
                       listener: (context, state) {
                         if (state is CreateProductLoaded) {
                           ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-                              content:
-                                  Text('${state.productResponseModel.id}')));
+                            content:
+                              Text('${state.productResponseModel.id}')));
                           Navigator.pop(context);
                           context
-                              .read<GetAllProductBloc>()
-                              .add(DoGetAllProductEvent());
+                            .read<GetAllProductBloc>()
+                            .add(DoGetAllProductEvent());
                         }
                       },
                       child: BlocBuilder<CreateProductBloc, CreateProductState>(

@@ -98,7 +98,6 @@ class _LoginPageState extends State<LoginPage> {
               TextField(
                 style: TextStyle(color: Colors.white),
                 decoration: InputDecoration(
-                  // hintText: "Enter Username Here",
                   labelText: "Email",
                   labelStyle : TextStyle(color: Colors.white),
                   fillColor: Colors.transparent,
@@ -157,13 +156,11 @@ class _LoginPageState extends State<LoginPage> {
                   if (state is LoginLoaded) {
                     emailController!.clear();
                     passwordController!.clear();
-                    //navigasi
                     ScaffoldMessenger.of(context).showSnackBar(
                       const SnackBar(
-                          backgroundColor: Colors.blue,
-                          content: Text('Success Login')),
+                        backgroundColor: Colors.blue,
+                        content: Text('Success Login')),
                     );
-
                     Navigator.push(context, MaterialPageRoute(builder: (context) {
                       return const HomePage();
                     }));
@@ -186,20 +183,18 @@ class _LoginPageState extends State<LoginPage> {
                           .read<LoginBloc>()
                           .add(DoLoginEvent(loginModel: requestModel));
                     },
-                     style: ElevatedButton.styleFrom(
-                      primary: Colors.pinkAccent,
-                      minimumSize: const Size.fromHeight(50),
-                      shadowColor: Colors.grey.withOpacity(0.4),
-                      elevation: 24, // e
-                       shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(10.0),
-                    ),
-
+                    style: ElevatedButton.styleFrom(
+                        primary: Colors.pinkAccent,
+                        minimumSize: const Size.fromHeight(50),
+                        shadowColor: Colors.grey.withOpacity(0.4),
+                        elevation: 24, // e
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(10.0),
+                      ),
                     ),
 
                     child: const Text('Login',
                     style: TextStyle(color: Colors.white),
-
                     ),
 
                   );
@@ -214,9 +209,20 @@ class _LoginPageState extends State<LoginPage> {
                     return const RegisterPage();
                   }));
                 },
-                child: const Text(
-                  'Belum Punya Akun? Register',
-                  style: TextStyle(color : Colors.white),
+                // child: const Text(
+                //   'Belum Punya Akun? Register',
+                //   style: TextStyle(color : Colors.white),
+                // ),
+                child: RichText(
+                  text: const TextSpan(
+                    children: <TextSpan>[
+                      TextSpan(text: 'New Member? ', style: TextStyle(color: Colors.white)),
+                      TextSpan(text: 'Register now ', style: TextStyle(
+                        color: Colors.pinkAccent,
+                        fontWeight: FontWeight.w700,
+                      )),
+                    ],
+                  ),
                 ),
               ),
             ],

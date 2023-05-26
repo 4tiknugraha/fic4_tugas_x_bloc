@@ -153,7 +153,7 @@ class _RegisterPageState extends State<RegisterPage> {
                 controller: passwordController,
               ),
               const SizedBox(
-                height: 40,
+                height: 46 ,
               ),
               BlocConsumer<RegisterBloc, RegisterState>(
                 listener: (context, state) {
@@ -208,7 +208,7 @@ class _RegisterPageState extends State<RegisterPage> {
                 },
               ),
               const SizedBox(
-                height: 36,
+                height: 16,
               ),
               InkWell(
                 onTap: () {
@@ -216,10 +216,21 @@ class _RegisterPageState extends State<RegisterPage> {
                     return const LoginPage();
                   }));
                 },
-                child: const Text(
-                  'Belum Punya Akun? Register',
-                   style: TextStyle(color : Colors.white),
-                  // style: TextStyle(decoration: TextDecoration.underline),
+                // child: const Text(
+                //   'Belum Punya Akun? Register',
+                //    style: TextStyle(color : Colors.white),
+                //   // style: TextStyle(decoration: TextDecoration.underline),
+                // ),
+                child: RichText(
+                  text: const TextSpan(
+                    children: <TextSpan>[
+                      TextSpan(text: 'Already a member? ', style: TextStyle(color: Colors.white)),
+                      TextSpan(text: 'Log In', style: TextStyle(
+                        color: Colors.pinkAccent,
+                        fontWeight: FontWeight.w700,
+                      )),
+                    ],
+                  ),
                 ),
               ),
             ],
