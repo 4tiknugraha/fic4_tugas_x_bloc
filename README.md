@@ -8,7 +8,5 @@ A new Flutter project.
 
 Form Login & Form Register
 
-
-<img width="301" alt="Screenshot 2023-05-26 at 21 51 27" src="https://github.com/4tiknugraha/fic4_tugas_x_bloc/assets/38272198/0420afa7-19c7-4589-87d4-fdb2694cacf0">
-  
-<img width="301" alt="image" src="https://github.com/4tiknugraha/fic4_tugas_x_bloc/assets/38272198/4e702c09-e9cd-47b0-80f5-355530cd3884">
+<img width="276" alt="Screenshot_2023-05-26_at_22 02 40-removebg-preview" src="https://github.com/4tiknugraha/fic4_tugas_x_bloc/assets/38272198/703bd91c-5f0d-4cc2-8693-dda119aca623">
+<img width="277" alt="Screenshot_2023-05-26_at_21 51 27-removebg-preview" src="https://github.com/4tiknugraha/fic4_tugas_x_bloc/assets/38272198/56dfcdcc-acd1-4948-82ff-a16dfd8f8685">
